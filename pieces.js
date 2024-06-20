@@ -56,3 +56,19 @@ boutonFiltrer.addEventListener("click", function () {
    console.log(piecesFiltrees)
 });
 
+ const boutonDescription = document.querySelector('.btn-desc');
+ boutonDescription.addEventListener("click", function(){
+    const piecesFiltrees =  pieces.filter(function(piece){
+       return piece.description;
+    });
+    console.log(piecesFiltrees);
+ });
+
+ const butonTriDesc = document.querySelector('.btn-tri-dec');
+ butonTriDesc.addEventListener("click", function(){
+    const PiecesFiltrees = pieces.sort(function(a, b){
+        return b.prix - a.prix;
+    });
+    console.log(PiecesFiltrees);
+        
+ });
