@@ -72,3 +72,20 @@ boutonFiltrer.addEventListener("click", function () {
     console.log(PiecesFiltrees);
         
  });
+
+ const noms = pieces.map(piece => piece.nom);
+ for(let i = pieces.length -1; i >= 0; i--){
+    if(pieces[i].prix > 35) noms.splice(i, 1)
+ }
+
+ console.log(noms);
+
+ const abordablesElements = document.createElement('ul');
+
+ for(let i = 0; i < noms.length; i++){
+    const nomElement = document.createElement('li');
+    nomElement.innerHTML = noms[i] ;
+    abordablesElements.appendChild(nomElement);
+ }
+
+ document.querySelector('.abordables').appendChild(abordablesElements);
